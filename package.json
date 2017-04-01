@@ -5,10 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build": "ng build --dev",
+    "serve": "concurrently --kill-others \"ng serve --proxy-config ./proxy.conf.json\" \"node ./mock-server/mock-server.js\""
   },
   "private": true,
   "dependencies": {
