@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationComponent } from './navigation.component';
+import { ProductsComponent } from './products.component';
 import { ServerConnectionService } from '../services/server-connection.service'
 import { RouterModule } from '@angular/router';
 
@@ -10,13 +10,13 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   declarations: [
-    NavigationComponent
+    ProductsComponent
   ],
   exports: [
-    NavigationComponent
+    ProductsComponent
   ],
   providers: [
     ServerConnectionService
   ]
 })
-export class NavigationModule { }
+export class ProductsModule { }

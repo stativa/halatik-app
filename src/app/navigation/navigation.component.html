@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let item of items">
-    <a href="{{item.translit}}">{{item.name}}</a>
+    <a [routerLink]="['/catalog', item.translit]">{{item.name}}</a>
   </li>
 
 </ul>

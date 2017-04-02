@@ -13,6 +13,8 @@
 .project
 .classpath
 .c9/
+*.log
+npm-debug.log.*
 *.launch
 .settings/
 *.sublime-workspace
