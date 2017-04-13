@@ -19,9 +19,9 @@ import { AppComponent } from './app.component';
     HttpModule,
     NavigationModule,
     RouterModule.forRoot([
-      {
-        path: 'catalog/:category', component: ProductsComponent
-      }
+      { path: '', component: ProductsComponent },
+      { path: 'catalog/:category', component: ProductsComponent }
+      //
     ], { useHash: false })
   ],
   providers: [],

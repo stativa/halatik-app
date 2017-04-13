@@ -16,6 +16,13 @@ app.get('/api/navigation', function (req, res) {
     });
 });
 
+app.get('/api/products', function (req, res) {
+    console.log('GET: /api/products');
+    jsonfile.readFile(currentPath + '/responses/items.json', function(err, obj) {
+        res.send(JSON.stringify(obj));
+    });
+});
+
 
 let resourceNotFoundMiddleware = function (req, res, next) {
     console.log('NOT FOUND (404): ', req.originalUrl);

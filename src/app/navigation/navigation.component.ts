@@ -15,7 +15,7 @@ export class NavigationComponent implements OnInit {
   public items:any;
   constructor(private navigationService: NavigationService,
               private router: Router) {
-    router.events
+    this.router.events
     .filter(event => event instanceof RoutesRecognized)
     .subscribe((event:RoutesRecognized) => {
       
@@ -25,7 +25,6 @@ export class NavigationComponent implements OnInit {
       } else {
         
       }*/
-
       this.navigationService.getCategory(event.state.root.firstChild.params.category).then(this.onNavigationGetAll);
     });
   }
