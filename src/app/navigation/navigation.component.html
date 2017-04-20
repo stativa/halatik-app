@@ -1,6 +1,12 @@
 <ul>
   <li *ngFor="let item of items">
     <a [routerLink]="['/catalog', item.translit]">{{item.name}}</a>
+
+    <ul *ngIf="item.active">
+      <li *ngFor="let subcat of item.children">
+        <a [routerLink]="['/catalog/type', subcat.translit]">{{subcat.name}}</a>
+      </li>
+    </ul>
   </li>
 
 </ul>

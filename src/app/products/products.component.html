@@ -1,3 +1,9 @@
 <div *ngFor="let product of products" class="item">
     {{product.name}}
+    <div class="img">
+        <img src="http://halatik.com.ua/view/frontend/img/items/preview/{{product.id}}.jpg" width="{{previewImgWidth}}" />
+    </div>
+    <div>
+        Размеры: 
+    </div>
 </div>

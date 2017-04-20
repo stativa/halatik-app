@@ -25,7 +25,13 @@ export class NavigationComponent implements OnInit {
       } else {
         
       }*/
-      this.navigationService.getCategory(event.state.root.firstChild.params.category).then(this.onNavigationGetAll);
+
+      if(event.state.root.firstChild.url && event.state.root.firstChild.url[1].path === 'type') {
+        this.navigationService.getType(event.state.root.firstChild.params.category).then(this.onNavigationGetAll);
+      } else {
+        this.navigationService.getCategory(event.state.root.firstChild.params.category).then(this.onNavigationGetAll);
+      }
+      
     });
   }
 

@@ -1,5 +1,12 @@
 .item {
     float:left;
-    width: 33%;
-    height: 400px;
+    width: 22%;
+    height: 250px;
+    margin: 0 15px 15px 0;
+    background: #f8f8f8;
+}
+
+.item .img { 
+    width: 100%;
+    text-align: center;
 }

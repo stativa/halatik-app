@@ -11,11 +11,17 @@ export class ProductsService {
     return this.serverConnection.request(REQUEST_URLS.PRODUCTS, false);
   }
 
- /* getCategory(category): Promise<Response> {
-    let params = new RequestOptions({
-      search: new URLSearchParams('category=' + category)
-    });
-    return this.serverConnection.request(REQUEST_URLS.NAVIGATION, params, false);
-  }*/
+  getCategory(category): Promise<Response> {
+    //let params = {};
+    /*if (category) {
+      params = new RequestOptions({
+        search: new URLSearchParams('category=' + category)
+      });
+    }*/
+
+    category = category || '';
+
+    return this.serverConnection.request(REQUEST_URLS.PRODUCTS + category, null, false);
+  }
 
 }

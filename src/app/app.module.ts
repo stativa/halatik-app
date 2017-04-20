@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
     NavigationModule,
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
+      { path: 'catalog/type/:category', component: ProductsComponent },
       { path: 'catalog/:category', component: ProductsComponent }
       //
     ], { useHash: false })
