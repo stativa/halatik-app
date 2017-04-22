@@ -24,4 +24,15 @@ export class ProductsService {
     return this.serverConnection.request(REQUEST_URLS.PRODUCTS + category, null, false);
   }
 
+  getSubcategory(subcategory): Promise<Response> {
+    subcategory = subcategory || '';
+
+    return this.serverConnection.request(REQUEST_URLS.SUB_PRODUCTS + subcategory, null, false);
+  }
+
+  getMain(): Promise<Response> {
+    return this.serverConnection.request(REQUEST_URLS.MAIN_PRODUCTS, null, false);
+  }
+
+
 }

@@ -17,8 +17,14 @@ export class ProductsComponent implements OnInit {
               private productsService: ProductsService) { 
     this._route.params.subscribe((product) => {
       //this.products = product.category
-      this.onProductGetAll
-      this.productsService.getCategory(product.category).then(this.onProductGetAll);
+     // this.onProductGetAll
+      if (product.category) {
+        this.productsService.getCategory(product.category).then(this.onProductGetAll);
+      } else if (product.subcategory) {
+        this.productsService.getSubcategory(product.subcategory).then(this.onProductGetAll);
+      } else if (!product.subcategory && !product.category) {
+        this.productsService.getMain().then(this.onProductGetAll);
+      }
     });
 
   //  this.productsService.getAll().then(this.onProductGetAll);

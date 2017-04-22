@@ -12,23 +12,23 @@ export class NavigationService {
   }
 
   getCategory(category): Promise<Response> {
-    let params:object = {};
+    /*let params:object = {};
     if (category) {
       params = new RequestOptions({
         search: new URLSearchParams('category=' + category)
       });
-    }
-    return this.serverConnection.request(REQUEST_URLS.NAVIGATION, params, false);
+    }*/
+    return this.serverConnection.request(REQUEST_URLS.NAVIGATION_CATEGORY + category, null, false);
   }
 
   getType(type): Promise<Response> {
-    let params:object = {};
+    /*let params:object = {};
     if (type) {
       params = new RequestOptions({
         search: new URLSearchParams('type=' + type)
       });
-    }
-    return this.serverConnection.request(REQUEST_URLS.NAVIGATION, params, false);
+    }*/
+    return this.serverConnection.request(REQUEST_URLS.NAVIGATION_TYPE + type, null, false);
   }
 
 }

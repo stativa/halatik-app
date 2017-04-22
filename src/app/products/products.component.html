@@ -1,9 +1,21 @@
-<div *ngFor="let product of products" class="item">
-    {{product.name}}
-    <div class="img">
-        <img src="http://halatik.com.ua/view/frontend/img/items/preview/{{product.id}}.jpg" width="{{previewImgWidth}}" />
-    </div>
-    <div>
-        Размеры: 
+<div class="row">
+    <div *ngFor="let product of products" class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="http://halatik.com.ua/view/frontend/img/items/preview/{{product.id}}.jpg" width="{{previewImgWidth}}" />
+            <div class="caption">
+                <h4>{{product.name}}</h4>
+                <ul class="description">
+                    <li>Цвет: {{product.color}}</li>
+                    <li>Материал: {{product.material}}</li>
+                    <li>Артикул: {{product.articul}}</li>
+                    <li>Цена: {{product.price}}</li>
+                    <li>Бренд: {{product.brand}}</li>
+                    <li>Размеры: </li>
+                </ul>
+                <p>
+                    <a href="#" class="btn btn-default" role="button">Купить</a>
+                </p>
+            </div>
+        </div>
     </div>
 </div>

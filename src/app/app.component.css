@@ -1,8 +1,19 @@
-navigation {
+.left {
     width: 200px;
     float: left;
 }
 
 .txt {
     padding-left: 250px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0 0 15px 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 0;
+    margin: 0;
 }

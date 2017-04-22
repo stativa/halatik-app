@@ -1,9 +1,9 @@
-<ul>
-  <li *ngFor="let item of items">
+<ul class="nav nav-pills nav-stacked">
+  <li *ngFor="let item of items" [routerLinkActive]="['active']">
     <a [routerLink]="['/catalog', item.translit]">{{item.name}}</a>
 
     <ul *ngIf="item.active">
-      <li *ngFor="let subcat of item.children">
+      <li *ngFor="let subcat of item.children" [routerLinkActive]="['active']">
         <a [routerLink]="['/catalog/type', subcat.translit]">{{subcat.name}}</a>
       </li>
     </ul>
