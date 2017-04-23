@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsefullInfoComponent } from './usefull-info.component';
+import { ItemComponent } from './item.component';
 import { ServerConnectionService } from '../services/server-connection.service'
 import { RouterModule } from '@angular/router';
 
@@ -10,13 +10,13 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   declarations: [
-    UsefullInfoComponent
+    ItemComponent
   ],
   exports: [
-    UsefullInfoComponent
+    ItemComponent
   ],
   providers: [
     ServerConnectionService
   ]
 })
-export class ProductsModule { }
+export class ItemModule { }

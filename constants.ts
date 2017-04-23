@@ -5,10 +5,13 @@ export const REQUEST_URLS = {
     PRODUCTS: 'http://localhost:3000/api/items/category/',
     SUB_PRODUCTS: 'http://localhost:3000/api/items/subcategory/',
     MAIN_PRODUCTS: 'http://localhost:3000/api/items/main',
-    USEFULL_INFO: 'http://localhost:3000/api/usefull_info/'
+    USEFULL_INFO: 'http://localhost:3000/api/usefull_info/',
+    ITEM: 'http://localhost:3000/api/item/'
 }
 
 export const SIZES = {
     ITEM_PREVIEW_WIDTH: 150,
-    USEFULL_PREVIEW_IMG_WIDTH: 100
+    USEFULL_PREVIEW_IMG_WIDTH: 100,
+    USEFULL_IMG_WIDTH: 150,
+    ITEM_WIDTH: 400
 }

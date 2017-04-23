@@ -225,6 +225,17 @@ function start() {
   });
 
 
+  app.get('/api/usefull_info/:id', function (req, res) {
+    connection.query('SET NAMES utf8');
+
+
+    connection.query('SELECT name, id, DATE_FORMAT(date,\'%d.%m.%Y\') AS date, description FROM news WHERE id = ' + req.params.id + '  ORDER BY reyt DESC', function(err, news) {
+      if (err) throw err;  
+      res.json(news[0]);
+    });
+  });
+
+
   app.get('/api/usefull_info', function (req, res) {
     connection.query('SET NAMES utf8');
 
@@ -233,6 +244,23 @@ function start() {
       res.json(news);
     });
   });
+
+
+
+
+  app.get('/api/item/:id', function (req, res) {
+    connection.query('SET NAMES utf8');
+      var query = "SELECT items.id, items.name, items.price, brends.name as brand, brend as brand_id, categories.name as subcat_name, items.translit, items.color, items.description, items.material, items.articul, items.s, items.m, items.l, items.xl, items.xxl, items.xxxl, items.xxxxl, items.date " +
+          "FROM items, brends, categories " +
+          "WHERE items.id = '"+ req.params.id +"' and items.brend = brends.id and items.view = 1 and items.subcat_id = categories.id";
+
+      connection.query(query, function(err, rows) {
+        if (err) throw err;
+        res.json(rows[0]);
+      });
+  });
+
+
 
 
 

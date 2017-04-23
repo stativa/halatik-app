@@ -4,14 +4,10 @@ import { ServerConnectionService } from './server-connection.service';
 import { REQUEST_URLS } from '../../../constants';
 
 @Injectable()
-export class UsefullInfoService {
+export class ItemService {
   constructor(private serverConnection: ServerConnectionService) { }
 
-  getAll(): Promise<Response> {
-    return this.serverConnection.request(REQUEST_URLS.USEFULL_INFO, false);
-  }
-
-  getUsefullInfo(id): Promise<Response> {
-    return this.serverConnection.request(REQUEST_URLS.USEFULL_INFO + id, null, false);
+  getItem(id): Promise<Response> {
+    return this.serverConnection.request(REQUEST_URLS.ITEM + id, null, false);
   }
 }

@@ -2,12 +2,12 @@
 
 <div class="media" *ngFor="let item of items">
   <div class="media-left media-middle">
-    <a href="/">
+    <a [routerLink]="['/usefull_info', item.id]">
       <img class="media-object" src="http://halatik.com.ua/view/frontend/img/news/{{item.id}}.jpg" width="{{previewImgWidth}}" alt="{{item.name}}" />
     </a>
   </div>
   <div class="media-body">
-    <h4 class="media-heading"><a href="/">{{item.name}}</a></h4>
+    <h4 class="media-heading"><a [routerLink]="['/usefull_info', item.id]">{{item.name}}</a></h4>
     <p>{{item.date}}</p>
     <p>{{item.short_description}}</p>
   </div>

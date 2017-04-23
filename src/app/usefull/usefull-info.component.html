@@ -1,0 +1,12 @@
+<h1>Полезная информация</h1>
+<div class="media">
+  <div class="media-left media-top">
+    <img class="media-object" src="http://halatik.com.ua/view/frontend/img/news/{{item?.id}}.jpg" width="{{imgWidth}}" alt="{{item?.name}}" />
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{item?.name}}</h4>
+    <p>{{item?.date}}</p>
+    <div [innerHtml]="item?.description"></div>
+    <p><a [routerLink]="['/usefull_info']">Вернуться назад</a></p>
+  </div>
+</div>

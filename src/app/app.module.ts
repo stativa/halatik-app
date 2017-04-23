@@ -5,15 +5,20 @@ import { HttpModule } from '@angular/http';
 import { NavigationModule } from './navigation/navigation.module';
 import { RouterModule } from '@angular/router';
 
-import { UsefullInfoComponent } from './usefull-info/usefull-info.component';
+import { UsefullListComponent } from './usefull/usefull-list.component';
+import { UsefullInfoComponent } from './usefull/usefull-info.component';
+
 import { ProductsComponent } from './products/products.component';
+import { ItemComponent } from './item/item.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    UsefullInfoComponent
+    UsefullListComponent,
+    UsefullInfoComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +27,11 @@ import { AppComponent } from './app.component';
     NavigationModule,
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
-      { path: 'usefull_info', component: UsefullInfoComponent },
+      { path: 'usefull_info', component: UsefullListComponent },
+      { path: 'usefull_info/:name', component: UsefullInfoComponent },
       { path: 'catalog/type/:subcategory', component: ProductsComponent },
-      { path: 'catalog/:category', component: ProductsComponent }
+      { path: 'catalog/:category', component: ProductsComponent },
+      { path: 'catalog/item/:id', component: ItemComponent }
       //
     ], { useHash: false })
   ],
