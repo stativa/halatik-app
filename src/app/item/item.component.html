@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-left media-top">
-    <img src="http://halatik.com.ua/view/frontend/img/items/{{item?.id}}.jpg" width="{{imgWidth}}" />
+    <img src="{{imgUrl}}{{item?.id}}.jpg" width="{{imgWidth}}" />
   </div>
   <div class="media-body">
     <h4 class="media-heading">{{item?.name}}</h4>
@@ -10,7 +10,7 @@
         <li>Артикул: {{item?.articul}}</li>
         <li>Цена: {{item?.price}} ₴</li>
         <li>Бренд: {{item?.brand}}</li>
-        <li>Размеры: </li>
+        <li>Размеры: {{item?.size}}</li>
     </ul>
     <p>
         <a href="#" class="btn btn-default" role="button">Купить</a>

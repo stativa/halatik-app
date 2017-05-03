@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { SIZES } from '../../../constants'
+import { SIZES, URLS } from '../../../constants'
 
 @Component({
   selector: 'products',
@@ -12,6 +12,7 @@ import { SIZES } from '../../../constants'
 export class ProductsComponent implements OnInit {
   public products:any;
   public previewImgWidth = SIZES.ITEM_PREVIEW_WIDTH;
+  public previewImgUrl = URLS.IMAGE_PREVIEW;
 
   constructor(private _route: ActivatedRoute,
               private productsService: ProductsService) { 

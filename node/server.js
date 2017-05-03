@@ -16,7 +16,7 @@ var db_config = {
   port: '3306',
   user:'halatikc_two',
   password:'rtyujh_7N%',
-  database:'halatikc_halatik'
+  database:'halatikc_angular'
 };
 var connection;
 
@@ -165,6 +165,21 @@ function start() {
 
       connection.query(query, function(err, rows) {
         if (err) throw err;
+
+        for (var j = 0; j < rows.length; j++) {
+          rows[j].size = '';
+          if (rows[j].s) { rows[j].size += 'S, '}
+          if (rows[j].m) { rows[j].size += 'M, ' }
+          if (rows[j].l) { rows[j].size += 'L, ' }
+          if (rows[j].xl) { rows[j].size += 'XL, ' }
+          if (rows[j].xxl) { rows[j].size += 'XXL, ' }
+          if (rows[j].xxxl) { rows[j].size += 'XXXL, ' }
+          if (rows[j].xxxxl) { rows[j].size += 'XXXXL, ' }
+
+          rows[j].size = rows[j].size.slice(0, -2);
+        }
+      
+        
       //  response.writeHead(200, {"Access-Control-Allow-Origin": "*"});
         res.json(rows);
       });
@@ -194,6 +209,20 @@ function start() {
 
       connection.query(query, function(err, rows) {
         if (err) throw err;
+
+        for (var j = 0; j < rows.length; j++) {
+          rows[j].size = '';
+          if (rows[j].s) { rows[j].size += 'S, '}
+          if (rows[j].m) { rows[j].size += 'M, ' }
+          if (rows[j].l) { rows[j].size += 'L, ' }
+          if (rows[j].xl) { rows[j].size += 'XL, ' }
+          if (rows[j].xxl) { rows[j].size += 'XXL, ' }
+          if (rows[j].xxxl) { rows[j].size += 'XXXL, ' }
+          if (rows[j].xxxxl) { rows[j].size += 'XXXXL, ' }
+
+          rows[j].size = rows[j].size.slice(0, -2);
+        }
+        
       //  response.writeHead(200, {"Access-Control-Allow-Origin": "*"});
         res.json(rows);
       });
@@ -252,10 +281,21 @@ function start() {
     connection.query('SET NAMES utf8');
       var query = "SELECT items.id, items.name, items.price, brends.name as brand, brend as brand_id, categories.name as subcat_name, items.translit, items.color, items.description, items.material, items.articul, items.s, items.m, items.l, items.xl, items.xxl, items.xxxl, items.xxxxl, items.date " +
           "FROM items, brends, categories " +
-          "WHERE items.id = '"+ req.params.id +"' and items.brend = brends.id and items.view = 1 and items.subcat_id = categories.id";
+          "WHERE items.id = '"+ req.params.id +"' and items.brend = brends.id and items.subcat_id = categories.id";
 
       connection.query(query, function(err, rows) {
         if (err) throw err;
+
+        rows[0].size = '';
+        if (rows[0].s) { rows[0].size += 'S, '}
+        if (rows[0].m) { rows[0].size += 'M, ' }
+        if (rows[0].l) { rows[0].size += 'L, ' }
+        if (rows[0].xl) { rows[0].size += 'XL, ' }
+        if (rows[0].xxl) { rows[0].size += 'XXL, ' }
+        if (rows[0].xxxl) { rows[0].size += 'XXXL, ' }
+        if (rows[0].xxxxl) { rows[0].size += 'XXXXL, ' }
+        
+        rows[0].size = rows[0].size.slice(0, -2);
         res.json(rows[0]);
       });
   });

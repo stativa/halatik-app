@@ -15,3 +15,8 @@ export const SIZES = {
     USEFULL_IMG_WIDTH: 150,
     ITEM_WIDTH: 400
 }
+
+export const URLS = {
+    IMAGE: 'http://halatik.com.ua/view/frontend/img/items/',
+    IMAGE_PREVIEW: 'http://halatik.com.ua/view/frontend/img/items/preview/'
+}
