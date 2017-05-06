@@ -12,6 +12,9 @@ import { ProductsComponent } from './products/products.component';
 import { ItemComponent } from './item/item.component';
 import { AppComponent } from './app.component';
 
+
+import { ModalModule } from 'ngx-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,8 @@ import { AppComponent } from './app.component';
       { path: 'catalog/:category', component: ProductsComponent },
       { path: 'catalog/item/:id', component: ItemComponent }
       //
-    ], { useHash: false })
+    ], { useHash: false }),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

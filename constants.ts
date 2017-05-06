@@ -6,7 +6,8 @@ export const REQUEST_URLS = {
     SUB_PRODUCTS: 'http://localhost:3000/api/items/subcategory/',
     MAIN_PRODUCTS: 'http://localhost:3000/api/items/main',
     USEFULL_INFO: 'http://localhost:3000/api/usefull_info/',
-    ITEM: 'http://localhost:3000/api/item/'
+    ITEM: 'http://localhost:3000/api/item/',
+    SEND_CLICK_MAIL: 'http://localhost:3000/api/send_oneclick_mail'
 }
 
 export const SIZES = {
@@ -19,4 +20,8 @@ export const SIZES = {
 export const URLS = {
     IMAGE: 'http://halatik.com.ua/view/frontend/img/items/',
     IMAGE_PREVIEW: 'http://halatik.com.ua/view/frontend/img/items/preview/'
+}
+
+export const EMAILS = {
+    EMAIL: 'info@halatik.com.ua'
 }

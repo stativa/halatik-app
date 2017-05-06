@@ -1,5 +1,9 @@
-.thumbnail .description {
+.description {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.navbar-form {
+    padding: 15px 0;
 }

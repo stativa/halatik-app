@@ -139,6 +139,20 @@ function start() {
       connection.query(query, function(err, rows) {
         if (err) throw err;
       //  response.writeHead(200, {"Access-Control-Allow-Origin": "*"});
+
+        for (var j = 0; j < rows.length; j++) {
+          rows[j].size = '';
+          if (rows[j].s) { rows[j].size += 'S, '}
+          if (rows[j].m) { rows[j].size += 'M, ' }
+          if (rows[j].l) { rows[j].size += 'L, ' }
+          if (rows[j].xl) { rows[j].size += 'XL, ' }
+          if (rows[j].xxl) { rows[j].size += 'XXL, ' }
+          if (rows[j].xxxl) { rows[j].size += 'XXXL, ' }
+          if (rows[j].xxxxl) { rows[j].size += 'XXXXL, ' }
+
+          rows[j].size = rows[j].size.slice(0, -2);
+        }
+
         res.json(rows);
       });
   });

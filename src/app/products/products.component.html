@@ -15,7 +15,7 @@
                     <li>Размеры: {{product.size}}</li>
                 </ul>
                 <p>
-                    <a href="#" class="btn btn-default" role="button">Купить в 1 клик</a>
+                    <button class="btn btn-default" (click)="showChildModal(product)">Купить в 1 клик</button>
                 </p>
             </div>
         </div>
@@ -23,20 +23,46 @@
 </div>
 
 
-<div class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+<!--Large modal-->
+
+ 
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title pull-left">Купить в 1 клик</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
+        
+
+        <div class="row">
+            <div class="col-md-3"><img src="{{previewImgUrl}}{{selected?.id}}.jpg" width="{{previewImgWidth}}" /></div>
+            <div class="col-md-9">
+                <h4>{{selected?.name}}</h4>
+                <ul class="description">
+                    <li>Цвет: {{selected?.color}}</li>
+                    <li>Материал: {{selected?.material}}</li>
+                    <li>Артикул: {{selected?.articul}}</li>
+                    <li>Цена: {{selected?.price}} ₴</li>
+                    <li>Бренд: {{selected?.brand}}</li>
+                    <li>Размеры: {{selected?.size}}</li>
+                </ul>
+            </div>
+        </div>
+
+
+          
+          
+            <form class="navbar-form">
+                <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="phone" name="phone" placeholder="Введите номер телефона" style="width: 250px;">
+                </div>
+                <button type="submit" (click)="sendMail()" class="btn btn-default">Заказать</button>
+            </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    </div>
+  </div>
+</div>
